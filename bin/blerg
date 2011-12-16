@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+# The command line blerg generator
+
+$LOAD_PATH.unshift File.dirname(__FILE__) + '/../lib'
+require 'blerg'
+
+template = IO.read(ARGV.shift) #ARGF.read
+generator = Blerg::Generator.new Hash[*ARGV]
+puts(generator.generate([template])[0]) #IO.read(template)
