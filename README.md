@@ -14,15 +14,15 @@ The first step is to install the gem:
 
 Create an ERB template file for the boilerplate you'd like to generate, like the following:
 
-class <%= @foo %> {
-  public int id;
-  public String name;
-
-  public <% @foo %>(int id, String name) {
-    this.id = id;
-    this.name = name;
-  }
-}
+    class <%= @foo %> {
+      public int id;
+      public String name;
+    
+      public <% @foo %>(int id, String name) {
+        this.id = id;
+        this.name = name;
+      }
+    }
 
 Now run the blerg against your template, specifying the value you'd like to use for @foo (where mytemplate.erb is the file you created above)
 
@@ -30,25 +30,25 @@ Now run the blerg against your template, specifying the value you'd like to use 
 
 Blerg will execute the template with the substitutions made, and you would get the following
 
-class Bar {
-  public int id;
-  public String name;
+    class Bar {
+      public int id;
+      public String name;
 
-  public Bar(int id, String name) {
-    this.id = id;
-    this.name = name;
-  }
-}
+      public Bar(int id, String name) {
+        this.id = id;
+        this.name = name;
+      }
+    }
 
 ### In your ruby script
 
 You can also invoke Blerg in your own ruby scripts, as in the following examples:
 
-require 'rubygems'
-require 'blerg'
+    require 'rubygems'
+    require 'blerg'
 
-generator = Blerg::Generator.new(:name => "Pat")
-outputs = generator.generate(["Hello, my name is <%= @name %>"])
+    generator = Blerg::Generator.new(:name => "Pat")
+    outputs = generator.generate(["Hello, my name is <%= @name %>"])
 
 Calling Blerg in this way provides a bit more flexibility.  You can invoke multiple templates using the same set of variables, and your templates don't need to be defined in a file.
 
