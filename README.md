@@ -28,7 +28,7 @@ Now run the blerg against your template, specifying the value you'd like to use 
 
     blerg mytemplate.erb foo Bar
 
-Blerg will execute the template with the substitutions made, and you would get the following
+Blerg will execute the template, using the value "Bar" for the @foo variable (command-line variables are specified as sequences of key value pairs, like: key1 value1 key2 value2, etc.), and you would get the following
 
     class Bar {
       public int id;
